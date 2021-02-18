@@ -14,7 +14,7 @@ header = {
 response = requests.get(url, headers=header)
 
 soup = BeautifulSoup(response.content, "lxml")
-# print(soup.prettify())
+
 
 movie_list = []
 
@@ -30,7 +30,7 @@ for row in rows:
         'rating':rating
     }
     movie_list.append(imdb)
-# print(movie_list)
+
 
 df = pd.DataFrame(movie_list)
 print(df.head())
